@@ -59,6 +59,14 @@ class QnaRepositoryTest {
 		System.out.println("Content : "+page.hasContent());//List<VO> 있으면 true, 없으면 false
 		System.out.println("First : "+page.isFirst());//현재 페이지가 처음인지 여부
 		System.out.println("Last : "+page.isLast());//현재 페이지가 마지막인지
+		
+		List<QnaVO> ar = page.getContent();
+		
+		for(QnaVO qnaVO : ar) {
+			System.out.println(qnaVO.getNum());
+			System.out.println(qnaVO.getTitle());
+			System.out.println("---------------------------------------");
+		}
 	}
 	
 	

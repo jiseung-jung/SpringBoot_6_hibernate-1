@@ -54,7 +54,7 @@
   		<td>조회수</td>
   	</tr>
   	
-  	<c:forEach items="${list}" var="vo">
+  	<c:forEach items="${pager.content}" var="vo">
   		<tr>
   			<td>${vo.num}</td>
   			<td><a href="./${board}Select?num=${vo.num}">${vo.title}</a></td>
@@ -67,17 +67,6 @@
   </table>
   
   <ul class="pagination">
-  	<c:if test="${pager.before}">
-  		<li><a href="#" class="list" title="${pager.startNum-1}">Before</a></li>
-  	</c:if>
-  
-  	<c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="i">
-  		<li><a href="#" class="list" title="${i}">${i}</a></li>
-  	</c:forEach>
-  	
-  	<c:if test="${pager.after}">
-  		<li><a href="#" class="list" title="${pager.lastNum+1}">After</a></li>
-  	</c:if>
   </ul>
   
   <button id="wrbtn" class="btn btn-default" style="float: right;">Write</button>
